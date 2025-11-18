@@ -1,0 +1,9 @@
+# Generic Python libraries and modules
+pip==25.3
+python-dotenv
+
+# For langchain
+langchain==1.0.7
+langchain-ollama==1.0.0
+
+
