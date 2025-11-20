@@ -8,4 +8,5 @@ llm = ChatOllama(
     validate_model_on_init=True  # To verify if model is available locally
 )
 
-print(llm.invoke("Explain me about Iron man"))
+results = llm.invoke("Tell me about Dr. A.P.J Abdul Kalam")
+print(results.text)
