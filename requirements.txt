@@ -1,8 +1,18 @@
 # Generic Python libraries and modules
 pip==25.3
 python-dotenv
+pypdf
 
 # For langchain
 langchain==1.0.7
 langchain-ollama==1.0.0
 langchain-openai==1.0.3
+langchain-community==0.4.1
+
+# Vector databases
+faiss-cpu==1.13.0
+
+# For linting and type annotations
+black
+isort
+flake8

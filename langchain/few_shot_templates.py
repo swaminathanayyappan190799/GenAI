@@ -1,17 +1,11 @@
+from langchain_core.prompts import FewShotPromptTemplate, PromptTemplate
 from langchain_ollama.llms import OllamaLLM
-from langchain_core.prompts import PromptTemplate, FewShotPromptTemplate
 
-
-llm = OllamaLLM(
-     model="gemma3:latest",
-     verbose=True,
-     temperature=0.6,
-     seed=13
-)
+llm = OllamaLLM(model="gemma3:latest", verbose=True, temperature=0.6, seed=13)
 
 examples = [
     {"word": "bright", "opposite": "dark"},
-    {"word": "day", "opposite": "night"}
+    {"word": "day", "opposite": "night"},
 ]
 
 prompt = FewShotPromptTemplate(
@@ -26,7 +20,7 @@ prompt = FewShotPromptTemplate(
         "Use the examples to determine the antonym for the user's input.\n\n"
         "Examples:"
     ),
-    suffix="\nNow provide the antonym for: {word}"
+    suffix="\nNow provide the antonym for: {word}",
 )
 
 chain = prompt | llm
