@@ -10,7 +10,8 @@ reference is any movies, comics or any other sorts.
 If the character is a real person then mention about
 their real life achievements."""
 
-prompt_template = PromptTemplate(input_variables=["character_name"], template=prompt)
+prompt_template = PromptTemplate(input_variables=["character_name"],
+                                 template=prompt)
 chain = prompt_template | llm
 
 results = chain.invoke("Iron Man")
