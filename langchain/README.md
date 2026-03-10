@@ -1,6 +1,6 @@
 # Langchain
 
-This directory has source files that use langchain (a Python SDK) , used for intracting with an LLM and make them effecient by adding additional knowledge resources.
+This directory has source files that use langchain (a Python SDK) , used for interacting with an LLM and make them effecient by adding additional knowledge resources.
 
 ## Pre-requisites
 
@@ -25,7 +25,7 @@ or you can also make it as a environment variable using the below command
 ```bash
 export OPENAI_API_KEY="sk-********************"
 ```
-this will make the active for the whole shell session , if you need it to be active for a long time then use
+this will make the key active for the whole shell session , if you need it to be active for a long time then use
 ```
 echo "OPENAI_API_KEY="sk-********************"" >> ~/.bashrc
 ```
