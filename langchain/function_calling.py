@@ -2,24 +2,25 @@ from langchain_ollama import ChatOllama
 
 from langchain.messages import ToolMessage
 from langchain.tools import tool
+from typing import Dict
 
 
 # Sample function used to demonstrate the tool calling in LLM's
 @tool
-def pull_student_records(student_name: str) -> str:
+def pull_employee_records(employee_name: str) -> Dict[str, str | int]:
     """
-    Function used to get data about student from the backend datastore
+    Function used to get data about employee from the backend datastore
 
     Parameters
     ----------
-        student_name: str
-            Name of the student
+        employee_name: str
+            Name of the employee
     Returns
     -------
-        str
-            Department of the student
+        Dict[str, str | int]
+            Details of the employee
     """
-    student_records = {
+    employee_records = {
         "swaminathan": {
             "Name": "Swaminathan Ayyappan",
             "Profession": "MLE",
@@ -31,7 +32,7 @@ def pull_student_records(student_name: str) -> str:
             "Years of experience": 3,
         },
     }
-    return student_records.get(student_name)
+    return employee_records.get(employee_name)
 
 
 llm = ChatOllama(
@@ -40,10 +41,10 @@ llm = ChatOllama(
     temperature=0.6,
     seed=13,
     validate_model_on_init=True,  # To verify if model is available locally
-).bind_tools([pull_student_records])
+).bind_tools([pull_employee_records])
 
 # Asking query to the LLM model that uses the defined tool
-results = llm.invoke("Get the details about the student : swaminathan")
+results = llm.invoke("Get the details about the employee : swaminathan")
 
 # If LLM decides to use the tool then it will get listed on tool_calls param
 print(results)
@@ -51,7 +52,7 @@ print(results)
 if results.tool_calls:
     tool_call = results.tool_calls[0]
 
-    tool_result = pull_student_records.invoke(input=tool_call.get("args"))
+    tool_result = pull_employee_records.invoke(input=tool_call.get("args"))
 
     final_response = llm.invoke(
         [

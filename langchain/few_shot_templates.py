@@ -27,4 +27,4 @@ chain = prompt | llm
 
 results = chain.invoke("sad")
 
-print(results)
+print(results.strip())

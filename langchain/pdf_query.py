@@ -25,9 +25,9 @@ split_docs = text_splitter.split_documents(raw_data)
 vector_store = FAISS.from_documents(documents=split_docs, embedding=embeddings)
 # vector_store.save_local(folder_path="data", index_name="virtus_faiss_index")
 
-vectors = vector_store.similarity_search(
-    query="what is the ideal psi to be maintained for tyres of virtus", k=5
-)
+# vectors = vector_store.similarity_search(
+#     query="what is the ideal psi to be maintained for tyres of virtus", k=5
+# )
 
 # Create a retriever from the FAISS vector store
 retriever = vector_store.as_retriever()

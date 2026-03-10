@@ -41,6 +41,10 @@ Once the model is pulled verify it's existence by executing
 ollama list
 ```
 
+### Environment Variables 
+
+Use the provided `.env.template` file to create the .env file ensure it is present on this project root of this repository.
+
 ## References
 
 * [Langchain-Ollama Documentation](https://docs.langchain.com/oss/python/integrations/providers/ollama)
