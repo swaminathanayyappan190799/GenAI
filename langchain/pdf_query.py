@@ -23,7 +23,14 @@ split_docs = text_splitter.split_documents(raw_data)
 
 
 vector_store = FAISS.from_documents(documents=split_docs, embedding=embeddings)
+
+# Saves the vector index in the form of faiss and pkl files (Optional)
 # vector_store.save_local(folder_path="data", index_name="virtus_faiss_index")
+
+# Loads the saved index from the defined path (Run this step only if the
+# vector index is already present in filesystem)
+# vector_store = FAISS.load_local(folder_path="data",
+#                                 index_name="virtus_faiss_index")
 
 # vectors = vector_store.similarity_search(
 #     query="what is the ideal psi to be maintained for tyres of virtus", k=5
