@@ -16,3 +16,6 @@ faiss-cpu==1.13.0
 black
 isort
 flake8
+
+# For performing inference using the models developed in C/C++ language
+ctransformers

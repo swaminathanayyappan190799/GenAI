@@ -29,3 +29,12 @@ this will make the key active for the whole shell session , if you need it to be
 ```
 echo "OPENAI_API_KEY="sk-********************"" >> ~/.bashrc
 ```
+
+## Use models from Hugging face hub
+
+Hugging face hub offers several open source LLM models for users to perform generative AI tasks. In the `hfllama2_huggingface.py` script we can see the llama 2 model binary file which was downloaded from huugging face is used directly with the help of **Ctransformers** module (useful for loading / producing inference of the models developed in C/C++ language). This demonstration uses the quantized 7B version of the LLama2 model from The Bloke hugging face repository which offers performance more equivalent to the actual Llama 2 model.
+
+### References
+
+- [LLama2 &b Hugging face quantized model](https://huggingface.co/TheBloke/Llama-2-7B-GGML)
+- [Ctransformers module documentation on Langchain](https://docs.langchain.com/oss/python/integrations/providers/ctransformers)
